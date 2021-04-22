@@ -5,9 +5,9 @@ author: "Barry Quinn"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: ["css/fonts.css","default", "css/mycssblend.css"]
+    css: ["fonts.css","default", "mycssblend.css"]
     includes::
-      in_header: ["assets/mathjax-equation-numbers.html"]
+      in_header: ["mathjax-equation-numbers.html"]
     lib_dir: libs
     nature:
       countdown: 120000
@@ -244,7 +244,7 @@ lm_eqn <- function(df){
     as.character(as.expression(eq));
 }
 
-p<-fakedata %>% ggplot(aes(x=x,y=y)) + geom_point(,color="blue") +geom_smooth(method = 'lm',se=FALSE,color='red')
+p<-fakedata %>% ggplot(aes(x=x,y=y)) + geom_point(color="blue") +geom_smooth(method = 'lm',se=FALSE,color='red')
 p + geom_text(x=20,y=0,label=lm_eqn(fakedata),parse = T,angle=18)
 ```
 ]
@@ -518,7 +518,7 @@ class: middle
 - These characteristics include, momentum, market value, operating profit, cash profit ,investments, dividend yield, book to market value
 
 ```{r load results, eval=TRUE, echo=FALSE}
-load('results.RData')
+load('~/Dropbox/Teaching/FinancialMachineLearning/FML/slides/results.rdata')
 ```
 
 ---
