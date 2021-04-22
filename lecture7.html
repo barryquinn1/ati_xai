@@ -124,8 +124,8 @@ Backtest overfitting results from confounding **research** with **validation**. 
 class:middle
 ## Feature analysis and the Scientific process
 
-<div id="htmlwidget-8f4dfe288c45dec049a5" style="width:800px;height:500px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f4dfe288c45dec049a5">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  \n  rec1 [label = \"Data Curator\"]\n  rec2 [label = \"Vendor, web-scrapping\"]\n  rec3 [label =  \"Data Collection\"]\n  rec4 [label = \"Feature Analyst\",color=\"red\"]\n  rec5 [label = \"MAD, PDP,ALE,Shapley Values...\",color=\"red\"]\n  rec6 [label = \"Pattern Identification\",color=\"red\"]\n  rec7 [label = \"Strategy Developer\"]\n  rec8 [label = \"Investment Algorithm\"]\n  rec9 [label=\"Hypothesis\"]\n  rec10 [label=\"Test hypothesis, backtest\"]\n  rec11 [label=\"Deflated Sharpe Ratio\"]\n  rec12 [label=\"Peer Review\"]\n  # edge definitions with the node IDs\n  rec1 -> rec2 -> rec3\n  rec4 -> rec5 -> rec6\n  rec7 -> rec8 -> rec9\n  rec10 -> rec11 -> rec12\n  subgraph cluster1{\n  label=\"Assembly Line \n (Investments)\";rank=same;rec1;rec2;rec4;rec5;rec7;rec8;rec10;rec11; \n  }\n  subgraph cluster2{\n  label=\"Scientific method \n (Academia)\";\n  rank=same;rec3;rec6;rec9;rec12;\n  }\n  subgraph cluster3{\n  rank=same;rec1;rec2;rec3;rec4;rec5;rec6;rec7;rec8;rec9\n  }\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-94677871d20a10aa205c" style="width:800px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-94677871d20a10aa205c">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  \n  rec1 [label = \"Data Curator\"]\n  rec2 [label = \"Vendor, web-scrapping\"]\n  rec3 [label =  \"Data Collection\"]\n  rec4 [label = \"Feature Analyst\",color=\"red\"]\n  rec5 [label = \"MAD, PDP,ALE,Shapley Values...\",color=\"red\"]\n  rec6 [label = \"Pattern Identification\",color=\"red\"]\n  rec7 [label = \"Strategy Developer\"]\n  rec8 [label = \"Investment Algorithm\"]\n  rec9 [label=\"Hypothesis\"]\n  rec10 [label=\"Test hypothesis, backtest\"]\n  rec11 [label=\"Deflated Sharpe Ratio\"]\n  rec12 [label=\"Peer Review\"]\n  # edge definitions with the node IDs\n  rec1 -> rec2 -> rec3\n  rec4 -> rec5 -> rec6\n  rec7 -> rec8 -> rec9\n  rec10 -> rec11 -> rec12\n  subgraph cluster1{\n  label=\"Assembly Line \n (Investments)\";rank=same;rec1;rec2;rec4;rec5;rec7;rec8;rec10;rec11; \n  }\n  subgraph cluster2{\n  label=\"Scientific method \n (Academia)\";\n  rank=same;rec3;rec6;rec9;rec12;\n  }\n  subgraph cluster3{\n  rank=same;rec1;rec2;rec3;rec4;rec5;rec6;rec7;rec8;rec9\n  }\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class: middle
@@ -176,7 +176,7 @@ class: middle
 * The p-value is low, even though the model gets the sign of the relationships wrong
 ]
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -364,7 +364,7 @@ pvalues=ols.pvalues
 ]
 .panel[.panel-name[Visualise the results]
 .pull-left-2[
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right-1[
 - In this example one informative feature and two redundant features are below the p-value&lt;0.05 threshold.
@@ -518,7 +518,7 @@ class: top
 - It  has over 1 million rows and can be considered a *Big Data* sample in academic terms.
 ]
 .panel[.panel-name[Missing data analysis]
-&lt;img src="index_files/figure-html/missing_raw-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/missing_raw-1.png" style="display: block; margin: auto;" /&gt;
 - The raw data has a considerable amount of missing observations 
 ]
 .panel[.panel-name[Correlation]
@@ -533,7 +533,7 @@ funnel_returns_ggplot &lt;- dat %&gt;%
 ```
 ]
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
 .acidinline[
 .small[
 The above funnel plot to visually the bivariate linear correlations between the outcome and the predictor variables. Dividend Yield (-0.08), Risk Free Rate ( -0.03) and Invest (-0.006)) are the top three correlated predictors, all negative related to stock returns by less than 0.10. 
@@ -569,7 +569,7 @@ class:middle
 plot_missing(df_w)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
 
@@ -579,7 +579,7 @@ df_w %&gt;%
     plot_correlation_funnel()
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
 - The winsorising step in particular improves the level of linear correlations of the predictor variables to Return.
 
 ]
@@ -824,7 +824,7 @@ ggsave("ml_stories.png")
 gridExtra::grid.arrange(p1, p2, p3,p4, nrow = 2)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ]
 .panel[.panel-name[Computer-age inference] 
@@ -902,7 +902,7 @@ dnn.dy &lt;- FeatureEffect$new(predictor.dnn, "StockIss",method='pdp') %&gt;% pl
 gridExtra::grid.arrange(glm.dy, rf.dy, gbm.dy,dnn.dy+ggtitle("DNN"),nrow = 2)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ]
 .panel[.panel-name[Inference]
@@ -926,7 +926,7 @@ class: middle
 ]
 .pull-right[
 
-&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
 - Shows the ICE plot for Dividend Yield for predicted returns for the gradient boosted model.
 - In the range of 0.6 to 0.75 there is an unusual spike in behaviour, suggestive of some event shock which may require more investigation.
 ]
@@ -1004,7 +1004,7 @@ interact.dnn &lt;- Interaction$new(predictor.dnn) %&gt;% plot() + ggtitle("dnn")
 gridExtra::grid.arrange(interact.glm, interact.rf, interact.gbm,interact.dnn,nrow = 2)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-24-1.png" width="60%" style="display: block; margin: auto;" /&gt;
 ]
 .panel[.panel-name[Inference]
 - The top right plot is a example of the importance of inferential skills when explaining FML output.
@@ -1062,7 +1062,7 @@ class: middle
 gridExtra::grid.arrange(interact.glm1, interact.rf1, interact.gbm1, interact.dnn1,ncol = 2)
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right-1[
 - The H-statistic is not widely implemented so having this feature in iml is beneficial. 
@@ -1122,7 +1122,7 @@ dnn.cp.sector&lt;- FeatureEffect$new(predictor.dnn,method="ale", feature = c("Ca
 glm.mom.mv + ggtitle('Interaction of Market Value and Momemtum Predictors')
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-28-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-28-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right-1[
 - In the regularised linear model,  the size of the interactions effects are infinitesimally small.
@@ -1135,7 +1135,7 @@ glm.mom.mv + ggtitle('Interaction of Market Value and Momemtum Predictors')
 gbm.dy.invest
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-29-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-29-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right-1[
 For the gradient boosting machine, there appears to be a strong negative interactive effect on predicted returns when companies are experiencing a positive invest between 0.2-0.4 and a dividend yield between 0.5 and 1. In contrast a strong positive interactive effect appears with companies with negative invest figures and large dividend yields (&gt;1)
@@ -1148,7 +1148,7 @@ For the gradient boosting machine, there appears to be a strong negative interac
 rf.mv.invest
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-30-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-30-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right-1[
 For the random forest machine, smaller firms with a high invest rate (&gt;0.5) the interactive effect has a non-linear impact on predicted returns moving from above 0.5 to below 0 as MV increases. 
@@ -1161,7 +1161,7 @@ For the random forest machine, smaller firms with a high invest rate (&gt;0.5) t
 dnn.cp.sector
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-31-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-31-1.png" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right-1[
 .small[
@@ -1315,7 +1315,7 @@ class: middle
 shapley.gbm
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-33-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-33-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ]
 .panel[.panel-name[GLM]
@@ -1325,7 +1325,7 @@ shapley.gbm
 shapley.glm
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-34-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-34-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ]
 .panel[.panel-name[RF]
@@ -1335,7 +1335,7 @@ shapley.glm
 shapley.rf
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-35-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-35-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ]
 .panel[.panel-name[DNN]
@@ -1345,7 +1345,7 @@ shapley.rf
 shapley.dnn
 ```
 
-&lt;img src="index_files/figure-html/unnamed-chunk-36-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-36-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ]
 .panel[.panel-name[Inference]
