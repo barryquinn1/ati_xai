@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Algorithmic trading and investment</title>
+    <title>FIN7030: Algorithmic trading and investment</title>
     <meta charset="utf-8" />
     <meta name="author" content="Barry Quinn" />
-    <meta name="date" content="2021-04-22" />
+    <meta name="date" content="2021-02-01" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.4/panelset.css" rel="stylesheet" />
     <script src="libs/panelset-0.2.4/panelset.js"></script>
@@ -19,6 +19,14 @@
   </head>
   <body>
     <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# FIN7030: Algorithmic trading and investment
+## XAI
+### Barry Quinn
+### 2021-02-01
+
+---
 
 
 
@@ -28,21 +36,6 @@
 layout: true
   
 &lt;div class="my-footer"&gt;&lt;span&gt;quinference.com&lt;/span&gt;&lt;/div&gt;
-
----
-name: ATL-title
-class: inverse,left, middle
-background-image: url(/Dropbox/Teaching/FinancialMachineLearning/FML/slides/img/title-slide-img.png)
-background-size: cover
-
-.salt[FIN7030]
-
-# Algorithmic Trading and Investing 
-
-# .fancy[Algorithms, Inference and XAI]
-
-.large[Barry Quinn | Queen's Management School | 2021-04-22]
-
 
 ---
 class:inverse, middle
@@ -124,8 +117,8 @@ Backtest overfitting results from confounding **research** with **validation**. 
 class:middle
 ## Feature analysis and the Scientific process
 
-<div id="htmlwidget-98716db12db024129ac1" style="width:800px;height:500px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-98716db12db024129ac1">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  \n  rec1 [label = \"Data Curator\"]\n  rec2 [label = \"Vendor, web-scrapping\"]\n  rec3 [label =  \"Data Collection\"]\n  rec4 [label = \"Feature Analyst\",color=\"red\"]\n  rec5 [label = \"MAD, PDP,ALE,Shapley Values...\",color=\"red\"]\n  rec6 [label = \"Pattern Identification\",color=\"red\"]\n  rec7 [label = \"Strategy Developer\"]\n  rec8 [label = \"Investment Algorithm\"]\n  rec9 [label=\"Hypothesis\"]\n  rec10 [label=\"Test hypothesis, backtest\"]\n  rec11 [label=\"Deflated Sharpe Ratio\"]\n  rec12 [label=\"Peer Review\"]\n  # edge definitions with the node IDs\n  rec1 -> rec2 -> rec3\n  rec4 -> rec5 -> rec6\n  rec7 -> rec8 -> rec9\n  rec10 -> rec11 -> rec12\n  subgraph cluster1{\n  label=\"Assembly Line \n (Investments)\";rank=same;rec1;rec2;rec4;rec5;rec7;rec8;rec10;rec11; \n  }\n  subgraph cluster2{\n  label=\"Scientific method \n (Academia)\";\n  rank=same;rec3;rec6;rec9;rec12;\n  }\n  subgraph cluster3{\n  rank=same;rec1;rec2;rec3;rec4;rec5;rec6;rec7;rec8;rec9\n  }\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-63ef520608b7b95a954a" style="width:800px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-63ef520608b7b95a954a">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  \n  rec1 [label = \"Data Curator\"]\n  rec2 [label = \"Vendor, web-scrapping\"]\n  rec3 [label =  \"Data Collection\"]\n  rec4 [label = \"Feature Analyst\",color=\"red\"]\n  rec5 [label = \"MAD, PDP,ALE,Shapley Values...\",color=\"red\"]\n  rec6 [label = \"Pattern Identification\",color=\"red\"]\n  rec7 [label = \"Strategy Developer\"]\n  rec8 [label = \"Investment Algorithm\"]\n  rec9 [label=\"Hypothesis\"]\n  rec10 [label=\"Test hypothesis, backtest\"]\n  rec11 [label=\"Deflated Sharpe Ratio\"]\n  rec12 [label=\"Peer Review\"]\n  # edge definitions with the node IDs\n  rec1 -> rec2 -> rec3\n  rec4 -> rec5 -> rec6\n  rec7 -> rec8 -> rec9\n  rec10 -> rec11 -> rec12\n  subgraph cluster1{\n  label=\"Assembly Line \n (Investments)\";rank=same;rec1;rec2;rec4;rec5;rec7;rec8;rec10;rec11; \n  }\n  subgraph cluster2{\n  label=\"Scientific method \n (Academia)\";\n  rank=same;rec3;rec6;rec9;rec12;\n  }\n  subgraph cluster3{\n  rank=same;rec1;rec2;rec3;rec4;rec5;rec6;rec7;rec8;rec9\n  }\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class: middle
@@ -258,7 +251,7 @@ table(null_hypothesis,calls) %&gt;% kable(col.names = ) %&gt;% kableExtra::kable
 
 ---
 class: middle
-# Pitfall 6: P-hacking
+# Pitfall 4: P-hacking
 - If hypotheses are tested more than once on a given dataset, the probability of a false positive exceeds `\(\alpha\)`
 - Selecting the model with lowest p-values out of multiple trials leads to selection bias
 - In finance, where datasets are limited, it is highly likely that a researcher reuses a datasets multiple times
@@ -266,7 +259,7 @@ class: middle
 - It is highly likely that published p-values are artificially low (false positives)
 ---
 class: middle
-## Pitfall 7: Substitution effects
+## Pitfall 5: Substitution effects
 - In addition to correct model specification, p- values require (among other assumptions):
 .blockquote[
 * Uncorrelated predictors (no multicollinearity)
@@ -441,7 +434,7 @@ class: middle
 class: middle
 # Outbreak in XAI literature
 .pull-left[
-![](~/Dropbox/Teaching/FinancialMachineLearning/FML/slides/img/XAI_lit_evolve.jpg)
+![](img/XAI_lit_evolve.jpg)
 ]
 .pull-right[
 .saltinline[
@@ -452,13 +445,13 @@ class: middle
 ---
 class: middle
 ## XAI: Who? and Why?
-![](~/Dropbox/Teaching/FinancialMachineLearning/FML/slides/img/XAItargets.jpg)
+![](img/XAItargets.jpg)
 
 ---
 class: middle
 ## Post-hoc explainability techniques for machine learning models
 .pull-left[
-![](~/Dropbox/Teaching/FinancialMachineLearning/FML/slides/img/post-hoc-ML-explainers.jpg)
+![](img/post-hoc-ML-explainers.jpg)
 ]
 .pull-right[
 - Post-hoc explainability techniques can be further differentiated into model-agnostic and model- specific techniques. 
@@ -1086,7 +1079,7 @@ class: middle
 - Clearly, the ALE plots are far superior to the PD plots in understanding the true effects of X1 and X2
 ]
 .pull-right-1[
-![](~/Dropbox/Teaching/FinancialMachineLearning/FML/slides/img/appleyfig7.jpeg)
+![](img/appleyfig7.jpeg)
 ]
 ---
 ## Inference is a cyclical process
